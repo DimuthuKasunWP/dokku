@@ -2,9 +2,6 @@ version: 2
 jobs:
   build:
     machine: true
-    environment:
-        DOKKU_HOST: dokku.me
-        DOKKU_PORT: 3022
     parallelism: 4
     steps:
       - checkout
