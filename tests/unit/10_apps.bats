@@ -7,6 +7,7 @@ setup() {
 }
 
 teardown() {
+  dokku trace:off
   global_teardown
 }
 
