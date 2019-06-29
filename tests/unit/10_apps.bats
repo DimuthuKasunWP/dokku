@@ -81,6 +81,7 @@ teardown() {
 }
 
 @test "(apps) apps:rename" {
+  dokku trace:on
   deploy_app
   run /bin/bash -c "dokku apps:rename $TEST_APP great-test-name"
   echo "output: $output"
