@@ -17,7 +17,7 @@ scheduler-docker-local-pre-deploy() {
     return
   fi
 
-  local DOCKER_RUN_LABEL_ARGS="--label 'org.label-schema.schema-version=1.0' --label 'org.label-schema.vendor=dokku' --label 'com.dokku.app-name=$APP'"
+  local DOCKER_RUN_LABEL_ARGS="--label=org.label-schema.schema-version=1.0 --label=org.label-schema.vendor=dokku --label=com.dokku.app-name=$APP"
 
   IMAGE=$(get_app_image_name "$APP" "$IMAGE_TAG")
 

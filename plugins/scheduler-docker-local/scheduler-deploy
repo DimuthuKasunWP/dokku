@@ -18,7 +18,7 @@ scheduler-docker-local-scheduler-deploy() {
 
   rm -f "${DOKKU_LIB_ROOT}/data/scheduler-docker-local/$APP/failed-containers"
 
-  local DOCKER_RUN_LABEL_ARGS="--label 'org.label-schema.schema-version=1.0' --label 'org.label-schema.vendor=dokku' --label 'com.dokku.app-name=$APP'"
+  local DOCKER_RUN_LABEL_ARGS="--label=org.label-schema.schema-version=1.0 --label=org.label-schema.vendor=dokku --label=com.dokku.app-name=$APP"
   local DOKKU_DOCKER_STOP_TIMEOUT DOKKU_HEROKUISH DOKKU_NETWORK_BIND_ALL IMAGE
   DOKKU_HEROKUISH=false
   IMAGE=$(get_deploying_app_image_name "$APP" "$IMAGE_TAG")

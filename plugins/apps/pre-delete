@@ -13,7 +13,7 @@ apps_pre_delete() {
   local CACHE_HOST_DIR="$DOKKU_HOST_ROOT/$APP/cache"
   verify_app_name "$APP"
 
-  local DOCKER_RUN_LABEL_ARGS="--label 'org.label-schema.schema-version=1.0' --label 'org.label-schema.vendor=dokku' --label 'com.dokku.app-name=$APP'"
+  local DOCKER_RUN_LABEL_ARGS="--label=org.label-schema.schema-version=1.0 --label=org.label-schema.vendor=dokku --label=com.dokku.app-name=$APP"
 
   if ! is_image_herokuish_based "$IMAGE"; then
     return

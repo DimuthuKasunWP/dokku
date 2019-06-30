@@ -37,7 +37,7 @@ execute_script() {
   local IMAGE id SCRIPT_CMD
 
   local DOCKER_COMMIT_LABEL_ARGS="--change 'LABEL org.label-schema.schema-version=1.0' --change 'LABEL org.label-schema.vendor=dokku' --change 'LABEL com.dokku.app-name=$APP'"
-  local DOCKER_RUN_LABEL_ARGS="--label 'org.label-schema.schema-version=1.0' --label 'org.label-schema.vendor=dokku' --label 'com.dokku.app-name=$APP'"
+  local DOCKER_RUN_LABEL_ARGS="--label=org.label-schema.schema-version=1.0 --label=org.label-schema.vendor=dokku --label=com.dokku.app-name=$APP"
 
   IMAGE=$(get_deploying_app_image_name "$APP" "$IMAGE_TAG")
   if [[ "$PHASE_SCRIPT_KEY" == "release" ]]; then
