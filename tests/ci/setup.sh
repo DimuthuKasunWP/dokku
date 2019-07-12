@@ -124,6 +124,16 @@ setup_circle() {
   sudo docker pull node:4
 }
 
-# shellcheck disable=SC2119
-setup_circle
-exit $?
+case "$1" in
+  docker)
+    sudo apt-get -qq -y remove dokku nginx
+    build_dokku_docker_image
+    run_dokku_container
+    ;;
+  *)
+    # shellcheck disable=SC2119
+    setup_circle
+    exit $?
+    ;;
+esac
+
